@@ -106,6 +106,10 @@ frontend/index.html
 
 in browser
 
+📎 Limitations
+
+HSI values are relative indicators intended for intra-city comparison.
+Results depend on satellite acquisition date and seasonal conditions.
 📌 Applications
 
 Urban climate planning
