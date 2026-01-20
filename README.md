@@ -111,6 +111,9 @@ HSI is a comparative spatial index, not a direct health risk metric
 
 👤 Author
 Kishore
+
 GIS Analyst
+
 Remote Sensing | Spatial Analysis | WebGIS
+
 Visakhapatnam, India
