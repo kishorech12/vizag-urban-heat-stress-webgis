@@ -39,7 +39,7 @@ function wardPopup(feature, layer) {
     <b>HSI:</b> ${p.heat_stress.toFixed(3)}<br>
     <b>LST Mean:</b> ${p.lst_mean.toFixed(2)} °C<br>
     <b>NDVI Mean:</b> ${p.ndvi_mean.toFixed(3)}<br>
-    <b>Year:</b> 2024
+    <b>Year:</b> 2025
   `);
 }
 
