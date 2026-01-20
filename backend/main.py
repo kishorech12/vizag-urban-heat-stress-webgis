@@ -37,7 +37,7 @@ def get_wards():
         heat_stress,
         "ndvi-- — zonal_statistics ndvi_ndvi_mean" AS ndvi_mean,
         "lst-- — zonal_statistics_lst_mean" AS lst_mean,
-        2024 AS data_year,
+        2025 AS data_year,
         ST_Transform(geom, 4326) AS geom
     FROM "GVMC_wards";
     """
