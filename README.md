@@ -1,127 +1,116 @@
 🌆 Vizag Urban Heat Stress WebGIS
 
-A ward-level Urban Heat Stress Index (HSI) WebGIS platform developed for Visakhapatnam Municipal Corporation (GVMC) using PostGIS, FastAPI, and Leaflet.
-This project integrates Land Surface Temperature (LST) and NDVI to identify spatial heat stress patterns and highlight the top 10 hottest wards for urban planning and climate resilience.
+A ward-level Urban Heat Stress Index (HSI) WebGIS application developed for Visakhapatnam Municipal Corporation (GVMC).
 
-🎯 Objective
+This project uses satellite-derived Land Surface Temperature (LST) and NDVI to visualize relative heat stress patterns across urban wards using an interactive web map.
 
-Quantify urban heat stress at ward level
+🎯 Project Objective
 
-Identify high-risk zones within Visakhapatnam
+Analyze spatial variation of urban heat stress at ward level
 
-Provide an interactive WebGIS for planners, researchers, and decision-makers
+Identify relatively high heat-stress zones within Visakhapatnam
 
-Demonstrate end-to-end GIS + WebGIS + Spatial Database workflow
+Develop an interactive WebGIS platform for visualization
 
-🧠 Methodology (Scientific Basis)
-🔹 Input Data
+Demonstrate an end-to-end GIS → Database → API → WebGIS workflow
 
-LST (Land Surface Temperature) – derived from satellite thermal bands
+📊 Data Used
 
-NDVI (Normalized Difference Vegetation Index) – vegetation density indicator
+Satellite data: Sentinel-2 Level-2A (December 2025)
 
-Ward boundaries – GVMC administrative polygons
+Parameters derived:
 
-🔹 Processing Steps
+Land Surface Temperature (LST)
 
-Zonal statistics performed for each ward:
+NDVI (Normalized Difference Vegetation Index)
 
-Mean LST
+Administrative boundaries: GVMC ward polygons
 
-Mean NDVI
+🧠 Methodology (Overview)
 
-Values normalized to 0–1 scale
+Mean LST and NDVI values calculated for each ward using zonal statistics
 
-Heat Stress Index (HSI) calculated using a weighted combination:
+Values normalized to a 0–1 scale
 
-HSI ∝ High LST + Low NDVI
+Heat Stress Index (HSI) computed as a relative indicator:
 
+Higher LST → Higher stress
 
-Wards ranked by HSI
+Lower NDVI → Higher stress
 
-Top 10 hottest wards extracted as a separate spatial layer
+Wards ranked based on HSI
 
-HSI values range from 0.27 (low stress) to 0.98 (extreme stress)
+Top 10 hottest wards extracted as a separate layer
+
+⚠️ HSI represents relative heat stress, not absolute thermal comfort or health risk.
 
 🗺️ WebGIS Features
-✔ Interactive Map
 
 OpenStreetMap & Satellite basemaps
 
-Ward-level choropleth (HSI)
+Ward-level Heat Stress Index (HSI) choropleth
 
-✔ Layers
+Top 10 hottest wards highlighted
 
-Heat Stress Index (All Wards)
-
-🔥 Top 10 Hottest Wards (highlighted)
-
-✔ Popups
+Interactive popups showing:
 
 Ward name
 
-Heat Stress Index
+HSI value
 
 Mean LST (°C)
 
 Mean NDVI
 
-Year of analysis
-
-✔ Tools
-
-Layer control (toggle layers)
+Year (2025)
 
 Search by ward name
 
+Layer toggle and scientific legend
+
 Live latitude/longitude display
 
-Scientific color legend
 
-🧰 Tech Stack
-Layer	Technology
-Database	PostgreSQL + PostGIS
-Backend API	FastAPI
-Spatial Processing	GeoPandas
-Frontend	HTML, CSS, JavaScript
-Web Mapping	Leaflet.js
-Version Control	Git & GitHub
-🚀 How to Run Locally
-1️⃣ Backend
+🧰 Technology Stack
+
+Database: PostgreSQL + PostGIS
+
+Backend API: FastAPI
+
+Spatial Processing: GeoPandas
+
+Frontend: HTML, CSS, JavaScript
+
+Web Mapping: Leaflet.js
+
+🚀 How to Run
+Backend
 cd backend
-venv\Scripts\activate
 uvicorn main:app --reload
+
 
 API endpoints:
 
-/wards → All ward HSI data
+/wards
 
-/top10 → Top 10 hottest wards
+/top10
 
-2️⃣ Frontend
+Frontend
 
 Open:
 
 frontend/index.html
 
-in browser
+⚠️ Limitations
 
-📎 Limitations
+Analysis based on single-date satellite data
 
-HSI values are relative indicators intended for intra-city comparison.
-Results depend on satellite acquisition date and seasonal conditions.
-📌 Applications
+Seasonal and diurnal temperature variation not captured
 
-Urban climate planning
-
-Heat mitigation strategy design
-
-Green infrastructure prioritization
-
-Academic & professional GIS portfolios
+HSI is a comparative spatial index, not a direct health risk metric
 
 👤 Author
-
 Kishore
-GIS | Remote Sensing | WebGIS
-📍 Visakhapatnam, India
+GIS Analyst
+Remote Sensing | Spatial Analysis | WebGIS
+Visakhapatnam, India
